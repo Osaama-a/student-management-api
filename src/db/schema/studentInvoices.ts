@@ -1,7 +1,7 @@
 import { pgTable, text, date, timestamp, uuid, unique } from "drizzle-orm/pg-core";
 import { students } from "./students.js";
 import { semesters } from "./semesters.js";
-import  { INVOICE_STATUS, ALL_INVOICE_STATUS} from "../../constants/invoiceStatus.js"
+import  { INVOICE_STATUS, ALL_INVOICE_STATUSES} from "../../constants/invoiceStatus.js"
 
 export const studentInvoices = pgTable("student_invoices", {
     id: uuid("id")
@@ -25,9 +25,9 @@ export const studentInvoices = pgTable("student_invoices", {
     dueDate: date("due_date")
         .notNull(),
 
-    status: text("status", { enum: ALL_INVOICE_STATUS})
+    status: text("status", { enum: ALL_INVOICE_STATUSES})
         .notNull()
-        .default(INVOICE_STATUS.PENDING),
+        .default(INVOICE_STATUS.DRAFT),
 
     createdAt: timestamp("created_at")
         .notNull()
