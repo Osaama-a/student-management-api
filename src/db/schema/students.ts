@@ -2,7 +2,7 @@ import { date, integer, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-co
 
 import { users } from "./users.js";
 import { departments } from "./departments.js";
-import { ALL_GENDER } from "../../constants/gender.js";
+import { ALL_GENDER } from "../../constants/genders.js";
 
 export const students = pgTable("students", {
     id: uuid("id")
