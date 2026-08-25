@@ -24,5 +24,5 @@ export const academicYears = pgTable("academic_years", {
         .defaultNow(),
 });
 
-export type AcadamicYear = typeof academicYears.$inferSelect;
-export type NewAcadamicYear = typeof academicYears.$inferInsert;
+export type AcademicYear = typeof academicYears.$inferSelect;
+export type NewAcademicYear = typeof academicYears.$inferInsert;

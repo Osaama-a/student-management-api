@@ -1,6 +1,6 @@
 import { pgTable, text, integer, timestamp, unique, uuid } from "drizzle-orm/pg-core";
 import { courses } from "./courses.js";
-import { semester } from "./semesters.js";
+import { semesters } from "./semesters.js";
 import { teachers } from "./teachers.js";
 
 
@@ -16,7 +16,7 @@ export const classSections = pgTable("class_sections", {
 
     semesterId: uuid("semester_id")
         .notNull()
-        .references(() => semester.id),
+        .references(() => semesters.id),
 
     teacherId: uuid("teacher_id")
         .notNull()

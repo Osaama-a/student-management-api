@@ -1,5 +1,5 @@
 import { boolean, integer, pgEnum, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
-import { ROLES, ALL_ROLES,  } from "../../constants/role.js";
+import { ROLES, ALL_ROLES,  } from "../../constants/roles.js";
 
 // export const userRoleEnum = pgEnum("user_role", ["admin", "student", "teacher"]);
 

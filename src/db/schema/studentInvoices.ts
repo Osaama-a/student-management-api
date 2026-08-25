@@ -1,6 +1,6 @@
-import { pgTable, integer, text, date, timestamp, uuid, unique } from "drizzle-orm/pg-core";
+import { pgTable, text, date, timestamp, uuid, unique } from "drizzle-orm/pg-core";
 import { students } from "./students.js";
-import { semester } from "./semesters.js";
+import { semesters } from "./semesters.js";
 import  { INVOICE_STATUS, ALL_INVOICE_STATUS} from "../../constants/invoiceStatus.js"
 
 export const studentInvoices = pgTable("student_invoices", {
@@ -14,7 +14,7 @@ export const studentInvoices = pgTable("student_invoices", {
 
     semesterId: uuid("semester_id")
         .notNull()
-        .references(() => semester.id),
+        .references(() => semesters.id),
 
     currency: text("currency")
         .notNull(),
