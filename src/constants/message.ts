@@ -9,6 +9,7 @@ export const MESSAGES = {
     TOKEN_REFRESHED: "Token refreshed successfully.",
     TOKEN_EXPIRED: "Session expired. Please log in again.",
     LOGOUT_SUCCESS: "Logged out successfully.",
+
   },
 
   GENERIC: {
@@ -20,6 +21,7 @@ export const MESSAGES = {
 
     SERVER_ERROR: "Something went wrong. Please try again later.",
     VALIDATION_ERROR: "Validation failed.",
+    BAD_REQUEST: "Bad Request",
   },
 
   ENROLLMENT: {
