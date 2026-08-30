@@ -1,14 +1,14 @@
-export const ATTENDANCE_STATUS = {
+export const ATTENDANCE_STATUSES = {
     PRESENT: "present",
     LATE: "late",
     ABSENT: "absent",
     EXCUSED: "excused",
 } as const;
 
-export type Attendace = (typeof ATTENDANCE_STATUS)[keyof typeof ATTENDANCE_STATUS];
-export const ALL_ATTENDACE = [
-    ATTENDANCE_STATUS.PRESENT,
-    ATTENDANCE_STATUS.LATE,
-    ATTENDANCE_STATUS.ABSENT,
-    ATTENDANCE_STATUS.EXCUSED,
+export type AttendanceStatus = (typeof ATTENDANCE_STATUSES)[keyof typeof ATTENDANCE_STATUSES];
+export const ALL_ATTENDANCE_STATUSES = [
+    ATTENDANCE_STATUSES.PRESENT,
+    ATTENDANCE_STATUSES.LATE,
+    ATTENDANCE_STATUSES.ABSENT,
+    ATTENDANCE_STATUSES.EXCUSED,
 ] as const;

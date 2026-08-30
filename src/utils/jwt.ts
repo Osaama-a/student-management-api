@@ -1,9 +1,9 @@
 import jwt,{ type SignOptions} from "jsonwebtoken"
-import crypto, { type SigningOptions } from "crypto";
+import crypto from "crypto";
 import { ENV } from "../config/env.js"
 import { type JwtPayload, type TokenPair } from "../types/auth.types.js";
 
-export function GenerateTokenPair (
+export function generateTokenPair(
     payload: JwtPayload
 ): TokenPair {
     const accessToken = jwt.sign(payload, ENV.JWT_ACCESS_TOKEN_SECRET, {

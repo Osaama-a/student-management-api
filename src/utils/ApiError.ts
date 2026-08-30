@@ -5,16 +5,19 @@ export class ApiError extends Error {
 
     public readonly statusCode: number;
     public readonly isOperational: boolean;
+    public readonly errors?: Record<string, unknown> | unknown[] | null;
 
     constructor(
         statusCode: number, 
         message: string, 
+        errors: Record<string, unknown> | unknown[] | null =  null,
         isOperational = true
     ) {
        super(message) ;
        this.name = "ApiError";
 
        this.statusCode = statusCode;
+       this.errors = errors;
        this.isOperational = isOperational;
 
        Object.setPrototypeOf (
@@ -30,11 +33,13 @@ export class ApiError extends Error {
     }
 
     static badRequest (
-        message = MESSAGES.GENERIC.BAD_REQUEST
+        message: string = MESSAGES.GENERIC.BAD_REQUEST,
+        errors: Record<string, unknown> | unknown[] | null = null,
     ){
         return new ApiError(
             HTTP_STATUS.BAD_REQUEST, 
-            message
+            message,
+            errors
         );
     }
 
@@ -61,7 +66,7 @@ export class ApiError extends Error {
     ) {
         return new ApiError(
             HTTP_STATUS.NOT_FOUND,
-            MESSAGES.GENERIC.NOT_FOUND(entity)
+            MESSAGES.FORMAT.NOT_FOUND(entity)
         );
     }
 
@@ -69,7 +74,7 @@ export class ApiError extends Error {
         message: string
     ) {
         return new ApiError(
-            HTTP_STATUS.CONFILICT,
+            HTTP_STATUS.CONFLICT,
             message
         );
     }
@@ -79,7 +84,9 @@ export class ApiError extends Error {
     ) {
         return new ApiError(
             HTTP_STATUS.INTERNAL_SERVER_ERROR,
-            message
+            message,
+            null,
+            false,
         );
     }
 

@@ -1,14 +1,14 @@
 import bcrypt from "bcrypt";
-
-const SALT_ROUNDS = 10;
+import { ENV } from "../config/env.js";
+// const SALT_ROUNDS = 12;
 
 export async function hashPassword(
     plain: string 
 ): Promise<string> {
-    return bcrypt.hash(plain, SALT_ROUNDS);
+    return bcrypt.hash(plain, ENV.SALT_ROUNDS);
 };
 
-export async function comparedPassword(
+export async function comparePassword(
     plain: string,
     hash: string
 ): Promise<boolean> {
