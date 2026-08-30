@@ -7,9 +7,9 @@ export interface LoginInput {
 }
 
 export interface JwtPayload {
-    id: number; 
+    id: string; 
+    email: string;
     role: Role;
-    jti?: string;
 
 }
 

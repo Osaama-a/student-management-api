@@ -12,16 +12,19 @@ export const MESSAGES = {
 
   },
 
-  GENERIC: {
+  FORMAT: {
     NOT_FOUND: (entity: string) => `${entity} not found.`,
     CREATED: (entity: string) => `${entity} created successfully.`,
     UPDATED: (entity: string) => `${entity} updated successfully.`,
     DELETED: (entity: string) => `${entity} deleted successfully.`,
     FETCHED: (entity: string) => `${entity} fetched successfully.`,
+  },
 
+  GENERIC: {
+    NOT_FOUND: "Requested resource was not found.",
     SERVER_ERROR: "Something went wrong. Please try again later.",
     VALIDATION_ERROR: "Validation failed.",
-    BAD_REQUEST: "Bad Request",
+    BAD_REQUEST: "Bad request.",
   },
 
   ENROLLMENT: {

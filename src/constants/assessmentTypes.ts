@@ -8,7 +8,7 @@ export const ASSESSMENT_TYPES = {
 } as const; 
 
 export type Assesment_Type = (typeof ASSESSMENT_TYPES)[keyof typeof ASSESSMENT_TYPES];
-export const ALL_ASSESMENT_TYPE = [
+export const ALL_ASSESMENT_TYPES = [
     ASSESSMENT_TYPES.ASSIGNMENT,
     ASSESSMENT_TYPES.QUIZ,
     ASSESSMENT_TYPES.MID_EXAM,

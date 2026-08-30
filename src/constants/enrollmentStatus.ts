@@ -1,18 +1,20 @@
-export const ENROLLMENT = {
-    ENROLLED: "enrolled",
-    DROPPED: "dropped",
-    WITHDRAWN: "withdrawn",
-    COMPLETED: "completed",
-    EXEMPTED: "exempted",
-    TRANSFERRED: "transferred",
-} as const; 
+export const ENROLLMENT_STATUS = {
+  PENDING: "pending",
+  ACTIVE: "active",
+  DROPPED: "dropped",
+  WITHDRAWN: "withdrawn",
+  COMPLETED: "completed",
+  CANCELLED: "cancelled",
+} as const;
 
-export type Enrollment = (typeof ENROLLMENT)[keyof typeof ENROLLMENT];
-export const ALL_ENROLLMENT = [
-    ENROLLMENT.ENROLLED,
-    ENROLLMENT.DROPPED,
-    ENROLLMENT.WITHDRAWN,
-    ENROLLMENT.COMPLETED,
-    ENROLLMENT.EXEMPTED,
-    ENROLLMENT.TRANSFERRED,
+export type EnrollmentStatus =
+  (typeof ENROLLMENT_STATUS)[keyof typeof ENROLLMENT_STATUS];
+
+export const ALL_ENROLLMENT_STATUSES = [
+  ENROLLMENT_STATUS.PENDING,
+  ENROLLMENT_STATUS.ACTIVE,
+  ENROLLMENT_STATUS.DROPPED,
+  ENROLLMENT_STATUS.WITHDRAWN,
+  ENROLLMENT_STATUS.COMPLETED,
+  ENROLLMENT_STATUS.CANCELLED,
 ] as const;
