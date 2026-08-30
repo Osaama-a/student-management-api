@@ -1,7 +1,7 @@
-import { pgTable, integer, text, timestamp, uuid, numeric } from "drizzle-orm/pg-core";
-import { semester } from "./semesters.js";
+import { pgTable, text, timestamp, uuid, numeric } from "drizzle-orm/pg-core";
+import { semesters } from "./semesters.js";
 
-export const feeRate = pgTable("fee_rate", {
+export const feeRates = pgTable("fee_rate", {
     id: uuid("id")
         .primaryKey()
         .defaultRandom(),
@@ -9,7 +9,7 @@ export const feeRate = pgTable("fee_rate", {
     semesterId: uuid("semester_id")
         .notNull()
         .unique()
-        .references(() => semester.id),
+        .references(() => semesters.id),
 
     amountPerCredit: numeric("amount_per_credit")
         .notNull(),
@@ -28,5 +28,5 @@ export const feeRate = pgTable("fee_rate", {
 
 });
 
-export type FeeRate = typeof feeRate.$inferSelect;
-export type NewFeeRate = typeof feeRate.$inferInsert;
+export type FeeRate = typeof feeRates.$inferSelect;
+export type NewFeeRate = typeof feeRates.$inferInsert;

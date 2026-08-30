@@ -1,14 +1,14 @@
-import { pgTable, integer, text, date, timestamp, unique, uuid } from "drizzle-orm/pg-core";
+import { pgTable, text, date, timestamp, unique, uuid } from "drizzle-orm/pg-core";
 import { academicYears } from "./academicYears.js";
 
 
 
-export const semester = pgTable("semester", {
+export const semesters = pgTable("semester", {
     id: uuid("id")
         .primaryKey()
         .defaultRandom(),
     
-    acadamicYearId: uuid("accadamic_year_id")
+    academicYearId: uuid("accadamic_year_id")
         .notNull()
         .references(() => academicYears.id),
 
@@ -32,12 +32,12 @@ export const semester = pgTable("semester", {
 (table) => [
     unique("accadmicYear_termName")
     .on(
-        table.acadamicYearId,
+        table.academicYearId,
         table.termName,
     ),
 ],
 
 ); 
 
-export type Semester = typeof semester.$inferSelect;
-export type NewSemester = typeof semester.$inferInsert;
+export type Semester = typeof semesters.$inferSelect;
+export type NewSemester = typeof semesters.$inferInsert;

@@ -1,9 +1,9 @@
-import { pgTable, integer, text, date, timestamp, uuid, numeric,  } from "drizzle-orm/pg-core";
+import { pgTable, text, date, timestamp, uuid, numeric,  } from "drizzle-orm/pg-core";
 import { classSections } from "./classSections.js";
 import { ALL_ASSESMENT_TYPE } from "../../constants/assessmentTypes.js";
 
 
-export const assessmentType = pgTable("assessment_type", {
+export const assessments = pgTable("assessments", {
     id: uuid("id")
         .primaryKey()
         .defaultRandom(),
@@ -36,5 +36,5 @@ export const assessmentType = pgTable("assessment_type", {
         .defaultNow(),
 });
 
-export type Assessment = typeof assessmentType.$inferSelect;
-export type NewAssessment = typeof assessmentType.$inferInsert; 
+export type Assessment = typeof assessments.$inferSelect;
+export type NewAssessment = typeof assessments.$inferInsert; 

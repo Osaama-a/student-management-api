@@ -1,8 +1,8 @@
-import { pgTable, integer, text, timestamp, uuid, numeric } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, uuid, numeric } from "drizzle-orm/pg-core";
 import { studentInvoices } from "./studentInvoices.js";
 import { users } from "./users.js";
 
-export const invoiceAdjustment = pgTable("invoice_adjustment", {
+export const invoiceAdjustments = pgTable("invoice_adjustment", {
     id: uuid("id")
         .primaryKey()
         .defaultRandom(),
@@ -26,5 +26,5 @@ export const invoiceAdjustment = pgTable("invoice_adjustment", {
             .defaultNow(),
 });
 
-export type InvoiceAdjustment = typeof invoiceAdjustment.$inferSelect;
-export type NewInvoiceAdjustment = typeof invoiceAdjustment.$inferInsert
+export type InvoiceAdjustment = typeof invoiceAdjustments.$inferSelect;
+export type NewInvoiceAdjustment = typeof invoiceAdjustments.$inferInsert

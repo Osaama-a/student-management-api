@@ -1,4 +1,4 @@
-import { pgTable, integer, text, timestamp, date, unique, uuid} from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, date, unique, uuid} from "drizzle-orm/pg-core";
 import { classSections } from "./classSections.js";
 import { students } from "./students.js";
 import { ENROLLMENT, ALL_ENROLLMENT } from "../../constants/enrollmentStatus.js";

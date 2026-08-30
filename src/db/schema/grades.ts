@@ -1,6 +1,6 @@
-import { integer, numeric, pgTable, text, timestamp, unique, uuid } from "drizzle-orm/pg-core";
+import { numeric, pgTable, text, timestamp, unique, uuid } from "drizzle-orm/pg-core";
 import { enrollments } from "./enrollments.js";
-import { assessmentType } from "./assessments.js";
+import { assessments } from "./assessments.js";
 
 export const grades = pgTable("grades", {
     id: uuid("id")
@@ -13,7 +13,7 @@ export const grades = pgTable("grades", {
 
     assessmentId: uuid("assessment_id")
         .notNull()
-        .references(() => assessmentType.id),
+        .references(() => assessments.id),
 
     score: numeric("score")
         .notNull(),
