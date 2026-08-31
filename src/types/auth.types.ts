@@ -1,5 +1,4 @@
 import { type Role } from "../constants/role.js";
-import type { Request as ExpressRequest } from "express";
 
 export interface LoginInput {
     email: string;

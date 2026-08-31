@@ -26,6 +26,10 @@ export const users = pgTable("users", {
         .notNull()
         .default(true),
 
+    mustChangePassword: boolean("must_change_password")
+        .notNull()
+        .default(true),
+
     createdAt: timestamp("created_at")
         .notNull()
         .defaultNow(),

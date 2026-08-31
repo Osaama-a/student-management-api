@@ -2,8 +2,8 @@ import { type PaginationMeta } from "../types/common.types.js";
 
 export function  parsePagination( 
     query: { 
-        page?: string,
-        limit?: string
+        page?: string, 
+        limit?: string 
     }
 ) {
     const page = Math.max(Number(query.page)|| 1, 1);

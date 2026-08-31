@@ -9,7 +9,7 @@ export const PAYMENT_STATUS = {
 export type PaymentStatus =
   (typeof PAYMENT_STATUS)[keyof typeof PAYMENT_STATUS];
 
-export const ALL_PAYMENT_STATUS = [
+export const ALL_PAYMENT_STATUSES = [
   PAYMENT_STATUS.PENDING,
   PAYMENT_STATUS.COMPLETED,
   PAYMENT_STATUS.FAILED,
